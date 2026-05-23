@@ -45,12 +45,12 @@ public final class KnockbackManager {
         return settings;
     }
 
-    public boolean canApplyHit(Player attacker) {
-        return cooldownTracker.canApply(attacker.getUniqueId(), System.nanoTime(), hitCooldownNanos);
+    public boolean canApplyHit(Player attacker, Player victim) {
+        return cooldownTracker.canApply(attacker.getUniqueId(), victim.getUniqueId(), System.nanoTime(), hitCooldownNanos);
     }
 
-    public void recordHit(Player attacker) {
-        cooldownTracker.mark(attacker.getUniqueId(), System.nanoTime());
+    public void recordHit(Player attacker, Player victim) {
+        cooldownTracker.mark(attacker.getUniqueId(), victim.getUniqueId(), System.nanoTime());
     }
 
     public void clearCooldown(Player attacker) {

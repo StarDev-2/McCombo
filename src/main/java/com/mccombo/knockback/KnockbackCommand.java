@@ -126,6 +126,7 @@ public final class KnockbackCommand implements CommandExecutor, TabCompleter {
         sender.sendMessage("air-vertical-multiplier: " + settings.airVerticalMultiplier());
         sender.sendMessage("sprint-multiplier: " + settings.sprintMultiplier());
         sender.sendMessage("max-vertical-cap: " + settings.maxVerticalCap());
+        sender.sendMessage("hit-cooldown: " + settings.hitCooldownSeconds());
         sender.sendMessage("randomness: " + settings.randomness());
     }
 }

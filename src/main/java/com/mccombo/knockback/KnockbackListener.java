@@ -30,11 +30,11 @@ public final class KnockbackListener implements Listener {
             return;
         }
 
-        if (!manager.canApplyHit(attacker)) {
+        if (!manager.canApplyHit(attacker, target)) {
             return;
         }
 
-        manager.recordHit(attacker);
+        manager.recordHit(attacker, target);
 
         final var velocity = manager.calculate(attacker, target);
         Bukkit.getScheduler().runTask(plugin, () -> {
