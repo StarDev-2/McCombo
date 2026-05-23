@@ -7,7 +7,7 @@ author: McCombo
 commands:
   kb:
     description: Admin commands for knockback tuning
-    usage: /kb <reload|set|profile>
+    usage: /kb <reload|set|get|profile>
     permission: knockback.admin
 permissions:
   knockback.admin:

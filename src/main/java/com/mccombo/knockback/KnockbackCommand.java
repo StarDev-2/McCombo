@@ -47,6 +47,10 @@ public final class KnockbackCommand implements CommandExecutor, TabCompleter {
                         : "Unknown setting or invalid value: " + args[1]);
                 return true;
             }
+            case "get" -> {
+                sendCurrentSettings(sender);
+                return true;
+            }
             case "profile" -> {
                 if (args.length != 3) {
                     sender.sendMessage("Usage: /kb profile save <name> or /kb profile load <name>");
@@ -78,6 +82,7 @@ public final class KnockbackCommand implements CommandExecutor, TabCompleter {
         if (args.length == 1) {
             completions.add("reload");
             completions.add("set");
+            completions.add("get");
             completions.add("profile");
             return completions;
         }
@@ -106,7 +111,20 @@ public final class KnockbackCommand implements CommandExecutor, TabCompleter {
         sender.sendMessage("CubeCraft knockback commands:");
         sender.sendMessage("/kb reload");
         sender.sendMessage("/kb set <setting> <value>");
+        sender.sendMessage("/kb get");
         sender.sendMessage("/kb profile save <name>");
         sender.sendMessage("/kb profile load <name>");
+    }
+
+    private void sendCurrentSettings(CommandSender sender) {
+        KnockbackSettings settings = manager.currentSettings();
+        sender.sendMessage("Current knockback settings:");
+        sender.sendMessage("horizontal-knockback: " + settings.horizontalKnockback());
+        sender.sendMessage("vertical-knockback: " + settings.verticalKnockback());
+        sender.sendMessage("air-horizontal-multiplier: " + settings.airHorizontalMultiplier());
+        sender.sendMessage("air-vertical-multiplier: " + settings.airVerticalMultiplier());
+        sender.sendMessage("sprint-multiplier: " + settings.sprintMultiplier());
+        sender.sendMessage("max-vertical-cap: " + settings.maxVerticalCap());
+        sender.sendMessage("randomness: " + settings.randomness());
     }
 }

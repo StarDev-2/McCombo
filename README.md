@@ -15,5 +15,6 @@ CubeCraft-style PvP knockback plugin for Paper.
 ## Admin Commands
 - `/kb reload`
 - `/kb set <setting> <value>`
+- `/kb get`
 - `/kb profile save <name>`
 - `/kb profile load <name>`
