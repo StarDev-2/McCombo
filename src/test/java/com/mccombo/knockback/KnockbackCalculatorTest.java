@@ -1,7 +1,6 @@
 package com.mccombo.knockback;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.bukkit.util.Vector;
 import org.junit.jupiter.api.Test;
@@ -17,6 +16,7 @@ class KnockbackCalculatorTest {
                 0.75,
                 1.05,
                 0.40,
+                0.15,
                 false
         ));
 
@@ -36,6 +36,7 @@ class KnockbackCalculatorTest {
                 0.75,
                 1.05,
                 0.40,
+                0.15,
                 false
         ));
 
@@ -54,6 +55,7 @@ class KnockbackCalculatorTest {
                 0.75,
                 1.05,
                 0.40,
+                0.15,
                 false
         ));
 
@@ -72,6 +74,7 @@ class KnockbackCalculatorTest {
                 0.75,
                 1.05,
                 0.40,
+                0.15,
                 false
         ));
 
@@ -89,6 +92,7 @@ class KnockbackCalculatorTest {
                 0.75,
                 1.05,
                 0.40,
+                0.15,
                 false
         ));
 

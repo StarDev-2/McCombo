@@ -7,6 +7,7 @@ public record KnockbackSettings(
         double airVerticalMultiplier,
         double sprintMultiplier,
         double maxVerticalCap,
+        double hitCooldownSeconds,
         boolean randomness
 ) {
     public KnockbackSettings {
@@ -16,6 +17,7 @@ public record KnockbackSettings(
         airVerticalMultiplier = clamp(airVerticalMultiplier, 0.0, 1.5);
         sprintMultiplier = clamp(sprintMultiplier, 0.0, 2.0);
         maxVerticalCap = clamp(maxVerticalCap, 0.0, 4.0);
+        hitCooldownSeconds = clamp(hitCooldownSeconds, 0.0, 5.0);
     }
 
     private static double clamp(double value, double min, double max) {

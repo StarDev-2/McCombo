@@ -94,6 +94,7 @@ public final class KnockbackCommand implements CommandExecutor, TabCompleter {
             completions.add("air-vertical-multiplier");
             completions.add("sprint-multiplier");
             completions.add("max-vertical-cap");
+            completions.add("hit-cooldown");
             completions.add("randomness");
             return completions;
         }

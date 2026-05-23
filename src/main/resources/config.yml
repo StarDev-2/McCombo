@@ -4,4 +4,5 @@ air-horizontal-multiplier: 0.90
 air-vertical-multiplier: 0.75
 sprint-multiplier: 1.05
 max-vertical-cap: 0.40
+hit-cooldown: 0.15
 randomness: false

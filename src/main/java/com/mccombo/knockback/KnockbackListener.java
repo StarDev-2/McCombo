@@ -7,6 +7,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class KnockbackListener implements Listener {
@@ -29,6 +30,12 @@ public final class KnockbackListener implements Listener {
             return;
         }
 
+        if (!manager.canApplyHit(attacker)) {
+            return;
+        }
+
+        manager.recordHit(attacker);
+
         final var velocity = manager.calculate(attacker, target);
         Bukkit.getScheduler().runTask(plugin, () -> {
             if (!target.isValid()) {
@@ -37,6 +44,11 @@ public final class KnockbackListener implements Listener {
             target.setVelocity(velocity);
             target.setFallDistance(0.0F);
         });
+    }
+
+    @EventHandler
+    public void onQuit(PlayerQuitEvent event) {
+        manager.clearCooldown(event.getPlayer());
     }
 
     private Player resolveAttacker(EntityDamageByEntityEvent event) {
