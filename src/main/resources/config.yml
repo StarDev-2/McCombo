@@ -1,0 +1,7 @@
+horizontal-knockback: 0.72
+vertical-knockback: 0.28
+air-horizontal-multiplier: 0.90
+air-vertical-multiplier: 0.75
+sprint-multiplier: 1.05
+max-vertical-cap: 0.40
+randomness: false

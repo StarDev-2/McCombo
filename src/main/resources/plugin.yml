@@ -1,0 +1,15 @@
+name: McCombo
+version: 1.0.0
+main: com.mccombo.knockback.KnockbackPlugin
+api-version: 1.21
+description: CubeCraft-style PvP knockback for Paper
+author: McCombo
+commands:
+  kb:
+    description: Admin commands for knockback tuning
+    usage: /kb <reload|set|profile>
+    permission: knockback.admin
+permissions:
+  knockback.admin:
+    description: Allows access to McCombo knockback tuning commands
+    default: op
